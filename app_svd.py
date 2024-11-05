@@ -36,8 +36,8 @@ def preprocess_text(text):
 
 
 # Memuat model dan TF-IDF vectorizer yang telah dilatih
-model = joblib.load('logistic_regression_model.pkl')
-tfidf = joblib.load('tfidf_vectorizer.pkl')
+pipeline = joblib.load('svd_tfidf_pipeline.pkl')
+
 
 # Judul aplikasi
 st.title("Aplikasi Klasifikasi Berita")
@@ -53,10 +53,10 @@ if st.button("Klasifikasikan"):
         preprocessed_text = preprocess_text(user_input)
 
         # Transformasi teks menggunakan TF-IDF
-        text_tfidf = tfidf.transform([preprocessed_text])
+        #text_tfidf = tfidf.transform([preprocessed_text])
 
         # Melakukan prediksi
-        prediction = model.predict(text_tfidf)
+        prediction = pipeline.predict(preprocessed_text)
         predicted_category = "Kesehatan" if prediction [0] ==  "Kesehatan" else "Olahraga"
 
         # Menampilkan hasil prediksi
