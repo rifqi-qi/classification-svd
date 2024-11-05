@@ -9,6 +9,10 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('punkt_tab')
+
 # Fungsi untuk preprocessing teks
 def preprocess_text(text):
     # 1. Case Folding: Mengubah semua huruf menjadi huruf kecil
