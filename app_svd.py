@@ -61,7 +61,7 @@ if st.button("Klasifikasikan"):
         #text_tfidf = tfidf.transform([preprocessed_text])
 
         # Melakukan prediksi
-        prediction = pipeline.predict(preprocessed_text)
+        prediction = pipeline.predict([preprocessed_text])
         predicted_category = "Kesehatan" if prediction [0] ==  "Kesehatan" else "Olahraga"
 
         # Menampilkan hasil prediksi
