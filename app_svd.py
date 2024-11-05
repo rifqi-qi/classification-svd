@@ -62,7 +62,7 @@ if st.button("Klasifikasikan"):
 
         # Melakukan prediksi
         prediction = pipeline.predict([preprocessed_text])
-        predicted_categories = "Kesehatan" if prediction == 0 else "Olahraga" for prediction in prediction
+        predicted_categories = 'Kesehatan' if prediction == 0 else 'Olahraga' for prediction in prediction
 
         # Menampilkan hasil prediksi
         st.write(f"Hasil Klasifikasi: **{predicted_categories}**")
